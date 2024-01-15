@@ -1,0 +1,12 @@
+{
+    "uno": "simple",
+    "dos": [
+        "red",
+        "white",
+        "blue"
+    ],
+    "tres": {
+        "A": 11,
+        "B": 66
+    }
+}

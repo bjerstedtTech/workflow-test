@@ -1,0 +1,28 @@
+# This defines the name of the workflow as it will appear in the "Actions" tab of the GitHub repository.
+name: Check all English links
+
+# Defines the `workflow_dispatch` and `scheduled` as triggers for the workflow.
+#
+# The `workflow_dispatch` event lets you manually run this workflow from the UI. For more information, see [`workflow_dispatch`](/actions/using-workflows/events-that-trigger-workflows#workflow_dispatch).
+#
+on:
+  workflow_dispatch:
+
+# Modifies the default permissions granted to `GITHUB_TOKEN`. This will vary depending on the needs of your workflow. For more information, see "[AUTOTITLE](/actions/using-jobs/assigning-permissions-to-jobs)."
+permissions:
+  contents: read
+  issues: write
+
+# Groups together all the jobs that run in the workflow file.
+jobs:
+  # Defines a job with the ID `check_all_english_links`, and the name `Check all links`, that is stored within the `jobs` key.
+  job-one:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Load Repo
+        uses: actions/checkout@v4
+        with:
+          path: './repo'
+      - run: |
+            ls
+        
