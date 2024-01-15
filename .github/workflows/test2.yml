@@ -32,4 +32,8 @@ jobs:
       - name: Check if JQ works
         run: |
             echo "uno = $(jq .uno data.json)"
+            echo "dos = $(jq .dos data.json)"
+            echo "dos[2] = $(jq .dos[2] data.json)"
+            echo "tres = $(jq .tres data.json)"
+            echo "tres.A = $(jq .tres.A data.json)"
 
